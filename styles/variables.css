@@ -4,10 +4,11 @@
   --main-font: "Inter-Variable";
   --accent-font: "Press Start 2P";
   --section-width: clamp(375px, 80%, 700px);
+  --text-font-size: 18px;
+  --button-font-size: 14px;
   --section-border: 2px solid var(--accent-color);
   --main-font-weight: 400;
   --bold-font-weight: 700;
-  --text-font-size: 18px;
   --accent-color: #000000;
   --bg-color: #FFFFFF;
   --bg-image: repeating-linear-gradient(
