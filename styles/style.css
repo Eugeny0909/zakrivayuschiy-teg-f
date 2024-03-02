@@ -26,6 +26,13 @@
   background-attachment: fixed;
 }
 
+.wrapper {
+  inline-size: var(--section-width);
+  background-color: var(--bg-color);
+  border: var(--section-border);
+  margin: auto;
+}
+
 /* Шапка */
 
 .header {
@@ -34,10 +41,7 @@
   align-items: center;
   justify-content: end;
   gap: 14px;
-  inline-size: clamp(375px, 80%, 700px);
   min-block-size: 368px;
-  background-color: inherit;
-  border: 2px solid var(--accent-color);
   padding-block-end: 5px;
   margin: 100px auto;
 }
@@ -98,3 +102,30 @@
   background: var(--accent-color);
   box-shadow: 0px 0px 4px 2px var(--accent-color);
 } */
+
+/* Основной контент */
+
+.card {
+  display: grid;
+}
+
+.card__title {
+  font-size: var(--text-font-size);
+  font-variation-settings: "wght" var(--bold-font-weight);
+  padding: 5px 10px;
+}
+
+.card__picture {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__text {
+  font-size: var(--text-font-size);
+  padding: 0px 25px;
+  margin-block-start: 28px;
+  line-height: 21px;
+}
