@@ -6,11 +6,14 @@
   --section-width: clamp(375px, 80%, 700px);
   --text-font-size: 18px;
   --button-font-size: 14px;
+  --label-font-size: 14px;
+  --text-line-height: 21px;
   --section-border: 2px solid var(--accent-color);
   --main-font-weight: 400;
   --bold-font-weight: 700;
   --accent-color: #000000;
-  --bg-color: #FFFFFF;
+  --bg-color: #ffffff;
+  --label-color: #ffffff;
   --bg-image: repeating-linear-gradient(
       90deg,
       #d3d3d3 0,
