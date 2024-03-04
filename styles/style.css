@@ -27,7 +27,7 @@
 }
 
 .wrapper {
-  inline-size: var(--section-width);
+  inline-size: var(--section-size);
   background-color: var(--bg-color);
   border: var(--section-border);
   margin: auto;
@@ -57,16 +57,14 @@
 }
 
 .theme-menu__list {
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  align-content: space-between;
   padding: 4px 0 22px 15px;
   gap: 8px;
 }
 
 .theme-menu__button {
+  position: relative;
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
   border: none;
@@ -77,13 +75,28 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
-.theme-menu__button:disabled:before {
-    content: "▶";
-    position: absolute;
-    inset-inline-end: 95px;
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  inset-block-start: 3px;
+  inset-inline-start: -12px;
+  animation: cursor 0.5s infinite ease-in-out alternate;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  inline-size: 100%;
+  block-size: 2px;
+  inset-block-end: -2px;
+  inset-inline-start: 0;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .theme-menu__button:hover {
@@ -91,13 +104,24 @@
   transition: opacity 0.3s ease;
 }
 
-/* .header__theme-menu-button:focus {
+.theme-menu__button:focus {
   outline: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--corners-color);
-} */
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@keyframes cursor {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-4px);
+  }
+} 
 
 /* Основной контент */
 
@@ -115,23 +139,27 @@
   position: relative;
 }
 
+.card__picture-section {
+  block-size: var(--section-size);
+}
+
 .card__label {
   position: absolute;
   inset-inline-end: clamp(0.688rem, 0.357rem + 1.408vw, 1.625rem);
   inset-block-start: clamp(1.5rem, 1.456rem + 0.188vw, 1.625rem);
   font-family: var(--accent-font);
-  font-size: var(--label-font-size);
+  font-size: 14px;
   color: var(--accent-color);
   mix-blend-mode: hard-light;
   opacity: 0.5;
   z-index: 1;
-  text-shadow: -1px 0 var(--label-color), 0 1px var(--label-color),
-    1px 0 var(--label-color), 0 -1px var(--label-color);
+  text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color),
+    1px 0 var(--bg-color), 0 -1px var(--bg-color);
 }
 
-@supports (-webkit-text-stroke: 1px var(--label-color)) {
+@supports (-webkit-text-stroke: 1px var(--bg-color)) {
   .card__label {
-    -webkit-text-stroke: 1px var(--label-color);
+    -webkit-text-stroke: 1px var(--bg-color);
     text-shadow: none;
   }
 }
@@ -146,10 +174,9 @@
 
 .card__text {
   font-size: var(--text-font-size);
-  padding: 0px 26px;
-  margin-block-start: 28px;
+  padding: 25px 26px 0px 26px;
   font-variation-settings: "wght" var(--main-font-weight);
-  line-height: var(--text-line-height);
+  line-height: 21px;
 }
 
 .card__buttons-block {

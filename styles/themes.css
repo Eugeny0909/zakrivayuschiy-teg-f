@@ -10,7 +10,6 @@
   --bold-font-weight: 700;
   --accent-color: #000000;
   --bg-color: #ffffff;
-  --label-color: #ffffff;
   --bg-image: repeating-linear-gradient(
       90deg,
       #d3d3d3 0,
@@ -33,7 +32,6 @@
   --bold-font-weight: 785;
   --accent-color: #00cc14;
   --bg-color: #000000;
-  --label-color: #000000;
   --bg-image: repeating-linear-gradient(
       90deg,
       #000 0,
@@ -57,7 +55,6 @@
     --bold-font-weight: 785;
     --accent-color: #00cc14;
     --bg-color: #000000;
-    --label-color: #000000;
     --bg-image: repeating-linear-gradient(
         90deg,
         #000 0,
