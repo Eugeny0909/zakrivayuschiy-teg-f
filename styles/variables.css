@@ -7,10 +7,12 @@
   --text-font-size: 18px;
   --button-font-size: 14px;
   --section-border: 2px solid var(--accent-color);
+  --main-heart-color: #ff0000;
   --main-font-weight: 400;
   --bold-font-weight: 700;
   --accent-color: #000000;
   --bg-color: #ffffff;
+  --btn-animation-color: #ffffff;
   --bg-image: repeating-linear-gradient(
       90deg,
       #d3d3d3 0,

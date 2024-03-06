@@ -12,3 +12,119 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* Keyframes */
+
+@keyframes cursor {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-4px);
+  }
+}
+
+@keyframes big-heart {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Анимаций иконки Like */
+
+.button::before {
+  content: "";
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  background-color: var(--btn-animation-color);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+  mix-blend-mode: difference;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Анимаций сердца */
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: big-heart 0.3s ease-in 0.1s 2 alternate;
+}
+
+.contour {
+  fill: var(--accent-color);
+  transition: fill 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--main-heart-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--main-heart-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--main-heart-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--main-heart-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--main-heart-color);
+  transition: fill 0.3s linear;
+}
+
+.sparks {
+  opacity: 0;
+  fill: var(--main-heart-color);
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 2 alternate;
+}
