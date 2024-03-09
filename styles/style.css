@@ -17,7 +17,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, Helvetica, sans-serif);
   font-variation-settings: "wght" var(--main-font-weight);
   color: var(--accent-color);
   background-color: var(--bg-color);
@@ -44,15 +44,18 @@
   margin: 100px auto;
 }
 
-.header__title {
-  font-family: var(--accent-font, fantasy);
+.header__logo {
+  font-family: var(--accent-font, "Pc Senior", fantasy);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-weight: 400;
+  text-decoration: none;
+  pointer-events: none;
 }
 
-.header__paragraph {
-  font-family: var(--accent-font, fantasy);
+.header__title {
+  font-family: var(--accent-font, "Pc Senior", fantasy);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -65,7 +68,7 @@
 
 .theme-menu__button {
   position: relative;
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, "Pc Senior", fantasy);
   font-size: var(--button-font-size);
   border: none;
   background-color: transparent;
@@ -131,18 +134,21 @@
   font-size: var(--text-font-size);
   font-variation-settings: "wght" var(--bold-font-weight);
   padding: 5px 10px;
+  border-block-end: var(--section-border);
 }
 
 .card__picture-section {
   position: relative;
-  block-size: var(--section-size);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 .card__label {
   position: absolute;
   inset-inline-end: clamp(0.688rem, 0.357rem + 1.408vw, 1.625rem);
   inset-block-start: clamp(1.5rem, 1.456rem + 0.188vw, 1.625rem);
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, "Pc Senior", fantasy);
   font-size: 14px;
   color: var(--accent-color);
   mix-blend-mode: hard-light;
@@ -162,9 +168,13 @@
 .card__picture {
   display: block;
   inline-size: 100%;
-  block-size: 100%;
+  block-size: var(--section-size);
   object-fit: cover;
   object-position: center;
+}
+
+.card__picture-caption {
+  border-block-start: var(--section-border);
 }
 
 .card__text {
@@ -218,7 +228,7 @@
 
 .button__text {
   color: var(--accent-color);
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, "Pc Senior", fantasy);
   font-size: var(--button-font-size);
 }
 
@@ -258,18 +268,14 @@
 
 /* Кнопка save и dialog */
 
-.save {
-  display: flex;
-  justify-content: center;
-  padding-block-end: clamp(6.25rem, 6.184rem + 0.282vw, 6.438rem);
-}
-
 .save__button {
   display: flex;
   justify-content: space-evenly;
   background-color: var(--bg-color);
   inline-size: clamp(19.375rem, 18.737rem + 2.723vw, 21.188rem);
   block-size: clamp(3.438rem, 5.888rem + -2.723vw, 5.25rem);
+  margin: auto;
+  margin-block-end: clamp(6.25rem, 6.184rem + 0.282vw, 6.438rem);
 }
 
 .button__icon {
@@ -302,11 +308,12 @@
 
 .dialog__icon {
   color: var(--accent-color);
-  max-inline-size: 39px;
+  display: flex;
+  inline-size: 80px;
 }
 
 .dialog__content-text {
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, "Pc Senior", fantasy);
   color: var(--accent-color);
   font-weight: var(--main-font-weight);
   font-size: var(--button-font-size);
