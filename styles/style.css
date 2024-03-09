@@ -222,21 +222,54 @@
   font-size: var(--button-font-size);
 }
 
+/* Фильтры */
+
+.img-japan {
+  filter: brightness(150%);
+}
+
+.img-france {
+  filter: saturate(150%);
+}
+
+.img-singapore {
+  filter: blur(0.2rem);
+}
+
+.img-australia {
+  filter: opacity(0.6);
+}
+
+.img-usa {
+  filter: grayscale(0.8);
+}
+
+.img-china {
+  filter: contrast(50%);
+}
+
+.img-russia {
+  filter: hue-rotate(-90deg);
+}
+
+.img-india {
+  filter: sepia(80%);
+}
+
 /* Кнопка save и dialog */
 
 .save {
   display: flex;
   justify-content: center;
-  padding-block-end: 103px;
+  padding-block-end: clamp(6.25rem, 6.184rem + 0.282vw, 6.438rem);
 }
 
 .save__button {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-evenly;
   background-color: var(--bg-color);
   inline-size: clamp(19.375rem, 18.737rem + 2.723vw, 21.188rem);
-  padding: 17px 17px;
+  block-size: clamp(3.438rem, 5.888rem + -2.723vw, 5.25rem);
 }
 
 .button__icon {
@@ -262,7 +295,7 @@
   backdrop-filter: blur(7px);
 }
 
-.dialog__title {
+.dialog__content {
   display: flex;
   gap: 20px;
 }
@@ -272,7 +305,7 @@
   max-inline-size: 39px;
 }
 
-.dialog__title-text {
+.dialog__content-text {
   font-family: var(--accent-font);
   color: var(--accent-color);
   font-weight: var(--main-font-weight);
@@ -288,13 +321,8 @@
 }
 
 @media (width < 376px) {
-  .save {
-    padding-block-end: 100px;
-  }
-
   .save__button {
     flex-direction: column;
-    gap: 7px;
   }
 
   .button__icon {
