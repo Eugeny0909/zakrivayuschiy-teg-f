@@ -325,7 +325,7 @@
   text-transform: uppercase;
 }
 
-@media (width < 376px) {
+@media (width < 480px) {
   .save__button {
     flex-direction: column;
   }
